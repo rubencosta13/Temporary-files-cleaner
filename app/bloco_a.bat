@@ -1,1 +1,0 @@
-START /MIN a.exe
