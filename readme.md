@@ -1,6 +1,6 @@
 # Temp file cleaner
 
-This script, is being developed, so companies, don't have to worry about going to a computer, deleting temporary files (this can cause a loss performance if not cleaned, this is more visible on low spec computers), and check the following things:
+This script is being developed, so companies, don't have to worry about going to a computer, deleting temporary files (this can cause a loss of performance if not cleaned, this is more visible on low spec computers), and checking the following things:
 
 - Task manager:
     - Cpu utilization
@@ -20,15 +20,15 @@ This script, is being developed, so companies, don't have to worry about going t
 # Configurations
 - Create a webhook
 - Go into config.ini file and assign the values, (inside the file there's an explanation about every setting)
-- Download all the packages using `npm install`, use `npm build` to make an executable with nexe. (Caution: Some antivirus will flag it has virus. Why? You may ask. Response: It removes OS folders, specifically temporary folders: ["temp", "%temp%", "prefetch"], so don't worry!)
+- Download all the packages using `npm install`, use `npm build` to make an executable with nexe. (Caution: Some antivirus will flag it as a virus. Why? You may ask. Response: It removes OS folders, specifically temporary folders: ["temp", "%temp%", "prefetch"], so don't worry!)
 - Optional:
     - Go to task scheduler: 
     - Click on: "Create Task"
     - Name the task something knowledgeable: e.g. "Monitor computer task"
     - Click on the "Triggers" tab
     - Use the default: "On schedule"
-    - Change the start hour, so you are sure that on that time someone is using the computer, (if you want, use: "Repeat task every:", so the task will run itself). Click OK
-    - Then go to "Actions" tab, click on "New", leave everything as default, just change on: "Program / script" to the .exe file directory
+    - Change the start hour, so you are sure that at that time someone is using the computer, (if you want, use: "Repeat task every:", so the task will run itself). Click OK
+    - Then go to the "Actions" tab, click on "New", leave everything as default, just change on "Program/script" to the .exe file directory
     - Then click "OK"
     - Then click "OK" again and close task manager (The program should run on the defined schedule)## Pre-requisites:
 - Recommended having a discord server, to receive the data;   
