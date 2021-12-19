@@ -34,7 +34,7 @@ This script, is being developed, so companies, don't have to worry about going t
 - Then you are going to receive the data to the discord!
 
 
-# Help!
+# 🆘 Help!
 
 If you need any help send me an [email](mailto:rubenlavoscosta@gmail.com). Use the subject as: "Temporary file cleaner"
 
