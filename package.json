@@ -2,8 +2,7 @@
   "name": "tempfies",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "main": "limparFicheiros.js",
+  "main": "index.js",
   "scripts": {
     "build": "nexe -t x64-8.0.0",
     "run": "node --experimental-json-modules index.js",

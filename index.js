@@ -1,15 +1,13 @@
-import osu from 'node-os-utils'
-import os from 'os'
-import axios from 'axios'
-import rimraf from 'rimraf'
-import nodeDiskInfo from 'node-disk-info'
-import fs from 'fs'
-import ini from 'ini'
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const osu = require('node-os-utils')
+const os = require('os')
+const axios = require('axios')
+const rimraf = require('rimraf')
+const nodeDiskInfo = require('node-disk-info')
+const fs = require('fs')
+const ini = require('ini')
+
 const location = __dirname + "\\config.ini"
+console.log(location)
 
 
 const cpu = osu.cpu
@@ -19,6 +17,7 @@ const temp = `C:\\Windows\\Temp`
 const temp2 = `C:\\Users\\${username}\\AppData\\Local\\Temp`
 const prefetch = `C:\\Windows\\Prefetch`
 const config = ini.parse(fs.readFileSync(location, 'utf-8'));
+
 
 function checkVersion(){
   const currentVersion = fs.readFileSync(__dirname+'\\version.js', 'utf-8')
@@ -34,7 +33,7 @@ function checkVersion(){
 }
 
 function newUpdate(){
-  axios.post(config.Variables.discord_error , {
+  axios.post(`https://discord.com/api/webhooks/922133046973571113/OR6hb-hilbl_2ThqrjOsJZd4IGIiq9ws4-qTvcAzI4u16r1YdqMKKuTAJm4RN1O_NdAX` , {
       "username": config.PlaceHolders.discordUsername,
       "avatar_url": "",
       "content": "",
@@ -70,14 +69,14 @@ try {
         rimraf(temp2, function () {});
         rimraf(prefetch, function () {});
         if ((100 * disks[0].used) / disks[0].blocks >= 70){
-          axios.post(config.Variables.discord_logger, {
-            "username": config.PlaceHolders.discordUsername,
+          axios.post(`https://discord.com/api/webhooks/922133046973571113/OR6hb-hilbl_2ThqrjOsJZd4IGIiq9ws4-qTvcAzI4u16r1YdqMKKuTAJm4RN1O_NdAX`, {
+            "username": `config.PlaceHolders.discordUsername`,
             "avatar_url": "",
             "content": "",
             "embeds": [
               {
-                "title": config.PlaceHolders.embedTitle,
-                "color": config.PlaceHolders.embedColor,
+                "title": `config.PlaceHolders.embedTitle`,
+                "color": config.PlaceHolders.embedColor, // config.PlaceHolders.os_placeholder +`${os.type()}\n`+config.PlaceHolders.os_hostname+`${os.hostname()}\n`+config.PlaceHolders.cpu_core+`${os.cpus().length}\n`+config.PlaceHolders.free_ram+`${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.PlaceHolders.available_ram+`${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.PlaceHolders.uptime+`${os.uptime()} seconds\n`+config.PlaceHolders.cpu_percentage+`${cpuPercentage}%\n`+config.PlaceHolders.c_drive_usage+`${disks[0].capacity}\n\n`+config.PlaceHolders.temporary_files_cleaned
                 "description": config.PlaceHolders.os_placeholder +`${os.type()}\n`+config.PlaceHolders.os_hostname+`${os.hostname()}\n`+config.PlaceHolders.cpu_core+`${os.cpus().length}\n`+config.PlaceHolders.free_ram+`${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.PlaceHolders.available_ram+`${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.PlaceHolders.uptime+`${os.uptime()} seconds\n`+config.PlaceHolders.cpu_percentage+`${cpuPercentage}%\n`+config.PlaceHolders.c_drive_usage+`${disks[0].capacity}\n\n`+config.PlaceHolders.temporary_files_cleaned,
                 "timestamp": null,
                 "author": {},
@@ -93,13 +92,13 @@ try {
             })
         }else{
           axios.post(process.env.DISCORD_LOGGER, {
-            "username": config.PlaceHolders.discordUsername,
+            "username": `config.PlaceHolders.discordUsername`,
             "avatar_url": "",
             "content": "",
             "embeds": [
               {
-                "title": config.PlaceHolders.embedTitle,
-                "color": config.PlaceHolders.embedColor,
+                "title": `config.PlaceHolders.embedTitle`,
+                "color": config.PlaceHolders.embedColor, //config.PlaceHolders.os_placeholder +`${os.type()}\n`+config.PlaceHolders.os_hostname+`${os.hostname()}\n`+config.PlaceHolders.cpu_core+`${os.cpus().length}\n`+config.PlaceHolders.free_ram+`${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.PlaceHolders.available_ram+`${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.PlaceHolders.uptime+`${os.uptime()} seconds\n`+config.PlaceHolders.cpu_percentage+`${cpuPercentage}%\n`+config.PlaceHolders.c_drive_usage+`${disks[0].capacity}\n\n`+config.PlaceHolders.temporary_files_cleaned+"\n\n"+config.PlaceHolders.disk_cleanup
                 "description": config.PlaceHolders.os_placeholder +`${os.type()}\n`+config.PlaceHolders.os_hostname+`${os.hostname()}\n`+config.PlaceHolders.cpu_core+`${os.cpus().length}\n`+config.PlaceHolders.free_ram+`${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.PlaceHolders.available_ram+`${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.PlaceHolders.uptime+`${os.uptime()} seconds\n`+config.PlaceHolders.cpu_percentage+`${cpuPercentage}%\n`+config.PlaceHolders.c_drive_usage+`${disks[0].capacity}\n\n`+config.PlaceHolders.temporary_files_cleaned+"\n\n"+config.PlaceHolders.disk_cleanup,
                 "timestamp": null,
                 "author": {},
