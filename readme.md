@@ -16,12 +16,13 @@ This script, is being developed, so companies, don't have to worry about going t
 
 ## Pre-requisites:
 
-- Recommended to have a discord server, to receive the data;
+
+- Recommended having a discord server, to receive the data;
     - Create a webhook
-    - Go into .env and define the webhook url
-    - Download all the packages using ``npm install``, use ``npm build`` to make an executable with nexe. (Caution: Some antivurus will flag it has virus. Why? You may ask. Response: It removes os folders, specifically temporary folders: ["temp", "%temp%", "prefetch"], so dont worry!)
+    - Go into .env and define the webhook URL
+    - Download all the packages using ``npm install``, use ``npm build`` to make an executable with nexe. (Caution: Some antivirus will flag it has virus. Why? You may ask. Response: It removes OS folders, specifically temporary folders: ["temp", "%temp%", "prefetch"], so don't worry!)
     - Optional, but should be fixed in the next updates:
-        - Go in to task scheduler: 
+        - Go to task scheduler: 
         - Click on: "Create Task"
         - Name the task something knowledgeable: e.g. "Monitor computer task"
         - Click on the "Triggers" tab
