@@ -33,7 +33,7 @@ function checkVersion(){
 }
 
 function newUpdate(){
-  axios.post(`https://discord.com/api/webhooks/922133046973571113/OR6hb-hilbl_2ThqrjOsJZd4IGIiq9ws4-qTvcAzI4u16r1YdqMKKuTAJm4RN1O_NdAX` , {
+  axios.post(config.Variables.discord_logger, {
       "username": config.PlaceHolders.discordUsername,
       "avatar_url": "",
       "content": "",
