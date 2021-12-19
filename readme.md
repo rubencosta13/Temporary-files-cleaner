@@ -1,6 +1,6 @@
 # Temp file cleaner
 
-This script, is being developed, so companies, don't have to worry about going to a computer, and check the following things:
+This script, is being developed, so companies, don't have to worry about going to a computer, deleting temporary files (this can cause a loss performance if not cleaned, this is more visible on low spec computers), and check the following things:
 
 - Task manager:
     - Cpu utilization
