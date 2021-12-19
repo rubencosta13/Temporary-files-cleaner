@@ -6,9 +6,6 @@ const nodeDiskInfo = require('node-disk-info')
 const fs = require('fs')
 const ini = require('ini')
 
-const location = __dirname + "\\config.ini"
-console.log(location)
-
 
 const cpu = osu.cpu
 const date = new Date()
@@ -17,7 +14,6 @@ const temp = `C:\\Windows\\Temp`
 const temp2 = `C:\\Users\\${username}\\AppData\\Local\\Temp`
 const prefetch = `C:\\Windows\\Prefetch`
 const config = ini.parse(fs.readFileSync(location, 'utf-8'));
-
 
 function checkVersion(){
   const currentVersion = fs.readFileSync(__dirname+'\\version.js', 'utf-8')
@@ -29,36 +25,34 @@ function checkVersion(){
       return
     }
   })
- 
 }
 
 function newUpdate(){
   axios.post(config.Variables.discord_logger, {
-      "username": config.PlaceHolders.discordUsername,
-      "avatar_url": "",
-      "content": "",
-      "embeds": [
-        {
-          "title": config.PlaceHolders.embedTitle,
-          "color": config.PlaceHolders.embedColor,
-          "description": config.PlaceHolders.not_updated,
-          "timestamp": null,
-          "author": {},
-          "image": {},
-          "thumbnail": {},
-          "footer": {
-            "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} `
-          },
-          "fields": []
-        }
-      ],
-      "components": []
-    })
+    "username": config.PlaceHolders.discordUsername,
+    "avatar_url": "",
+    "content": "",
+    "embeds": [
+      {
+        "title": config.PlaceHolders.embedTitle,
+        "color": config.PlaceHolders.embedColor,
+        "description": config.PlaceHolders.not_updated,
+        "timestamp": null,
+        "author": {},
+        "image": {},
+        "thumbnail": {},
+        "footer": {
+          "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} `
+        },
+        "fields": []
+      }
+    ],
+    "components": []
+  })
 }
 
 try {
   checkVersion()
-
   let percentage = 0
   cpu.usage()
   .then(cpuPercentage => {
@@ -117,24 +111,24 @@ try {
   })
 } catch (e) {
   axios.post(config.Variables.discord_error , {
-      "username": config.PlaceHolders.discordUsername,
-      "avatar_url": "",
-      "content": "",
-      "embeds": [
-        {
-          "title": config.PlaceHolders.embedTitle,
-          "color": config.PlaceHolders.embedColor,
-          "description": config.PlaceHolders.error+` ${e.message}\n`+ config.PlaceHolders.computer +`${os.hostname()}`,
-          "timestamp": null,
-          "author": {},
-          "image": {},
-          "thumbnail": {},
-          "footer": {
-            "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} `
-          },
-          "fields": []
-        }
-      ],
-      "components": []
-    })
+    "username": config.PlaceHolders.discordUsername,
+    "avatar_url": "",
+    "content": "",
+    "embeds": [
+      {
+        "title": config.PlaceHolders.embedTitle,
+        "color": config.PlaceHolders.embedColor,
+        "description": config.PlaceHolders.error+` ${e.message}\n`+ config.PlaceHolders.computer +`${os.hostname()}`,
+        "timestamp": null,
+        "author": {},
+        "image": {},
+        "thumbnail": {},
+        "footer": {
+          "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} `
+        },
+        "fields": []
+      }
+    ],
+    "components": []
+  })
 }
