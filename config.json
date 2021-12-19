@@ -1,0 +1,17 @@
+{
+    "discord_webhook_username": "<Insert webhook's username>",
+    "embed_title": "<Embed's title> ",
+    "embed_color": "2123412",
+    "operating_sistem_placeholder": "**<Operating System text>** ", 
+    "operating_sistem_hostname": "**<Hostname text>** ",
+    "cpu_core_number": "**<CPU core number text>** ",
+    "free_ram": "**<Free RAM text>** ",
+    "available_ram": "**<Available RAM text>** ",
+    "uptime": "**<Cpu uptime text>** ",
+    "cpu_percentage": "**<Cpu percentage text>** ",
+    "c_drive_usage": "**<C drive usage text>** ",
+    "disk_cleanup": "**<Disk cleanup text>** ",
+    "temporary_files_cleaned": "**<Temporary files cleaned text>** ",
+    "dc_log": "https://discord.com/api/webhooks/922133046973571113/OR6hb-hilbl_2ThqrjOsJZd4IGIiq9ws4-qTvcAzI4u16r1YdqMKKuTAJm4RN1O_NdAX",
+    "dc_error": "https://discord.com/api/webhooks/922133046973571113/OR6hb-hilbl_2ThqrjOsJZd4IGIiq9ws4-qTvcAzI4u16r1YdqMKKuTAJm4RN1O_NdAX"
+}

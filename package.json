@@ -2,9 +2,11 @@
   "name": "tempfies",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "limparFicheiros.js",
   "scripts": {
     "build": "nexe -t x64-8.0.0",
+    "run": "node --experimental-json-modules index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +15,7 @@
   "dependencies": {
     "@vercel/ncc": "^0.33.0",
     "axios": "^0.24.0",
+    "cputemp": "^0.0.1",
     "diskspace": "^2.0.0",
     "dotenv": "^10.0.0",
     "fs": "0.0.1-security",
@@ -23,7 +26,8 @@
     "os": "^0.1.2",
     "os-utils": "^0.0.14",
     "path": "^0.12.7",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "systeminformation": "^5.9.17"
   },
   "pkg": {
     "targets": [

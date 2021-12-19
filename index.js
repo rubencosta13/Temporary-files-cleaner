@@ -1,9 +1,11 @@
-const osu = require('node-os-utils');
-const os = require('os');
-const axios = require('axios');
-const rimraf = require('rimraf');
-const nodeDiskInfo = require('node-disk-info');
-require('dotenv').config()
+import osu from 'node-os-utils'
+import os from 'os'
+import axios from 'axios'
+import rimraf from 'rimraf'
+import nodeDiskInfo from 'node-disk-info'
+import {} from 'dotenv/config'
+import config from './config.json'
+  
 
 const cpu = osu.cpu
 const date = new Date()
@@ -25,15 +27,15 @@ try {
         rimraf(temp2, function () {});
         rimraf(prefetch, function () {});
         if ((100 * disks[0].used) / disks[0].blocks >= 70){
-          axios.post("https://discord.com/api/webhooks/918565980131704872/4lKAwUKRneSso2f5GARsy-V55KuQy8GgN8Yp78LAoMduvf67EiACW75Q9N-YpxM5O4oq", {
-            "username": "Monitor de recursos",
+          axios.post(config.dc_log, {
+            "username": config.discord_webhook_username,
             "avatar_url": "",
             "content": "",
             "embeds": [
               {
-                "title": "Limpeza de ficheiros temporarios e dados do computador:",
-                "color": 16711680,
-                "description": `Sistema operativo: ${os.type()}\nHostname: ${os.hostname()}\nNumero de cores: ${os.cpus().length}\nMemória Livre: ${Math.floor(os.freemem().toFixed(2))} Mb\nMemoria total: ${Math.floor(os.totalmem().toFixed(2))} Mb\nUptime: ${os.uptime()} Segundos\nPercentagem de CPU usada: ${cpuPercentage}%\nUso total do disco C: ${disks[0].capacity} **Considerar limpar o disco** \n\n**Ficheiros temporarios limpos!**`,
+                "title": config.embed_title,
+                "color": config.embed_color,
+                "description": config.operating_sistem_placeholder +`${os.type()}\n`+config.operating_sistem_hostname+`${os.hostname()}\n`+config.cpu_core_number+`${os.cpus().length}\n`+config.free_ram+`${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.available_ram+`${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.uptime+`${os.uptime()} seconds\n`+config.cpu_percentage+`${cpuPercentage}%\n`+config.c_drive_usage+`${disks[0].capacity}\n\n`+config.temporary_files_cleaned,
                 "timestamp": null,
                 "author": {},
                 "image": {},
@@ -47,7 +49,7 @@ try {
             "components": []
             })
         }else{
-          axios.post("https://discord.com/api/webhooks/918566044451356722/rtwy3ushmbPId6BODasqCVeEPpDXclBNoE-c2NdRRex_WnfkaPL4OuntyvFQ2N8dkxb_", {
+          axios.post(process.env.DISCORD_LOGGER, {
             "username": "Monitor de recursos",
             "avatar_url": "",
             "content": "",
@@ -72,7 +74,7 @@ try {
       })
   })
 } catch (e) {
-  axios.post("https://discord.com/api/webhooks/918570224754765844/AOQAK3K52UwsuF9of7rYxM_t9W3RWOrttdIL78bgrMZ-H8LeFYWzT7uDzuIKlr9vGMsa", {
+  axios.post(config.dc_error , {
       "username": "Monitor de recursos",
       "avatar_url": "",
       "content": "",
