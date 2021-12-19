@@ -20,9 +20,46 @@ const temp2 = `C:\\Users\\${username}\\AppData\\Local\\Temp`
 const prefetch = `C:\\Windows\\Prefetch`
 const config = ini.parse(fs.readFileSync(location, 'utf-8'));
 
+function checkVersion(){
+  const currentVersion = fs.readFileSync(__dirname+'\\version.js', 'utf-8')
+  const githubVersion = axios.get('https://raw.githubusercontent.com/rubencosta13/Temporary-files-cleaner/master/version.js')
+  .then(response => {
+    if (currentVersion !== githubVersion){
+      console.log(`New version available!`)
+      newUpdate()
+      return
+    }
+  })
+ 
+}
 
+function newUpdate(){
+  axios.post(config.Variables.discord_error , {
+      "username": config.PlaceHolders.discordUsername,
+      "avatar_url": "",
+      "content": "",
+      "embeds": [
+        {
+          "title": config.PlaceHolders.embedTitle,
+          "color": config.PlaceHolders.embedColor,
+          "description": config.PlaceHolders.not_updated,
+          "timestamp": null,
+          "author": {},
+          "image": {},
+          "thumbnail": {},
+          "footer": {
+            "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} `
+          },
+          "fields": []
+        }
+      ],
+      "components": []
+    })
+}
 
 try {
+  checkVersion()
+
   let percentage = 0
   cpu.usage()
   .then(cpuPercentage => {
