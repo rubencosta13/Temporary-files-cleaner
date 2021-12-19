@@ -14,6 +14,7 @@ This script, is being developed, so companies, don't have to worry about going t
 
 # ✅ Done: 
     [] Getting information about the disks
+    [] Cleaning temporary files
 
 
 # Configurations
