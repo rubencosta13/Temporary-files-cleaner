@@ -12,6 +12,6 @@
     "c_drive_usage": "**<C drive usage text>** ",
     "disk_cleanup": "**<Disk cleanup text>** ",
     "temporary_files_cleaned": "**<Temporary files cleaned text>** ",
-    "dc_log": "https://discord.com/api/webhooks/922133046973571113/OR6hb-hilbl_2ThqrjOsJZd4IGIiq9ws4-qTvcAzI4u16r1YdqMKKuTAJm4RN1O_NdAX",
-    "dc_error": "https://discord.com/api/webhooks/922133046973571113/OR6hb-hilbl_2ThqrjOsJZd4IGIiq9ws4-qTvcAzI4u16r1YdqMKKuTAJm4RN1O_NdAX"
+    "dc_log": "",
+    "dc_error": ""
 }
