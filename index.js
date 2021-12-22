@@ -13,7 +13,7 @@ const username = os.userInfo().username
 const temp = `C:\\Windows\\Temp`
 const temp2 = `C:\\Users\\${username}\\AppData\\Local\\Temp`
 const prefetch = `C:\\Windows\\Prefetch`
-const config = ini.parse(fs.readFileSync(location, 'utf-8'));
+const config = ini.parse(fs.readFileSync(__dirname+'\\config.ini', 'utf-8'));
 
 function checkVersion(){
   const currentVersion = fs.readFileSync(__dirname+'\\version.js', 'utf-8')
@@ -22,7 +22,6 @@ function checkVersion(){
     if (currentVersion !== githubVersion){
       console.log(`New version available!`)
       newUpdate()
-      return
     }
   })
 }
@@ -42,7 +41,7 @@ function newUpdate(){
         "image": {},
         "thumbnail": {},
         "footer": {
-          "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} `
+          "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} ${config.PlaceHolders.footerText}`
         },
         "fields": []
       }
@@ -71,13 +70,13 @@ try {
               {
                 "title": config.PlaceHolders.embedTitle,
                 "color": config.PlaceHolders.embedColor, // config.PlaceHolders.os_placeholder +`${os.type()}\n`+config.PlaceHolders.os_hostname+`${os.hostname()}\n`+config.PlaceHolders.cpu_core+`${os.cpus().length}\n`+config.PlaceHolders.free_ram+`${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.PlaceHolders.available_ram+`${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.PlaceHolders.uptime+`${os.uptime()} seconds\n`+config.PlaceHolders.cpu_percentage+`${cpuPercentage}%\n`+config.PlaceHolders.c_drive_usage+`${disks[0].capacity}\n\n`+config.PlaceHolders.temporary_files_cleaned
-                "description": config.PlaceHolders.os_placeholder +`${os.type()}\n`+config.PlaceHolders.os_hostname+`${os.hostname()}\n`+config.PlaceHolders.cpu_core+`${os.cpus().length}\n`+config.PlaceHolders.free_ram+`${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.PlaceHolders.available_ram+`${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.PlaceHolders.uptime+`${os.uptime()} seconds\n`+config.PlaceHolders.cpu_percentage+`${cpuPercentage}%\n`+config.PlaceHolders.c_drive_usage+`${disks[0].capacity}\n\n`+config.PlaceHolders.temporary_files_cleaned,
+                "description": config.PlaceHolders.os_placeholder +` ${os.type()}\n`+config.PlaceHolders.os_hostname+` ${os.hostname()}\n`+config.PlaceHolders.cpu_core+` ${os.cpus().length}\n`+config.PlaceHolders.free_ram+` ${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.PlaceHolders.available_ram+` ${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.PlaceHolders.uptime+` ${os.uptime()} seconds\n`+config.PlaceHolders.cpu_percentage+` ${cpuPercentage}%\n`+config.PlaceHolders.c_drive_usage+` ${disks[0].capacity}\n\n`+config.PlaceHolders.temporary_files_cleaned,
                 "timestamp": null,
                 "author": {},
                 "image": {},
                 "thumbnail": {},
                 "footer": {
-                  "text": `Made by: Ruben Costa#4242 | ${date.toISOString()}`
+                  "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} ${config.PlaceHolders.footerText}`
                 },
                 "fields": []
               }
@@ -93,13 +92,13 @@ try {
               {
                 "title": config.PlaceHolders.embedTitle,
                 "color": config.PlaceHolders.embedColor, //config.PlaceHolders.os_placeholder +`${os.type()}\n`+config.PlaceHolders.os_hostname+`${os.hostname()}\n`+config.PlaceHolders.cpu_core+`${os.cpus().length}\n`+config.PlaceHolders.free_ram+`${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.PlaceHolders.available_ram+`${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.PlaceHolders.uptime+`${os.uptime()} seconds\n`+config.PlaceHolders.cpu_percentage+`${cpuPercentage}%\n`+config.PlaceHolders.c_drive_usage+`${disks[0].capacity}\n\n`+config.PlaceHolders.temporary_files_cleaned+"\n\n"+config.PlaceHolders.disk_cleanup
-                "description": config.PlaceHolders.os_placeholder +`${os.type()}\n`+config.PlaceHolders.os_hostname+`${os.hostname()}\n`+config.PlaceHolders.cpu_core+`${os.cpus().length}\n`+config.PlaceHolders.free_ram+`${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.PlaceHolders.available_ram+`${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.PlaceHolders.uptime+`${os.uptime()} seconds\n`+config.PlaceHolders.cpu_percentage+`${cpuPercentage}%\n`+config.PlaceHolders.c_drive_usage+`${disks[0].capacity}\n\n`+config.PlaceHolders.temporary_files_cleaned+"\n\n"+config.PlaceHolders.disk_cleanup,
+                "description": config.PlaceHolders.os_placeholder + `${os.type()}\n`+config.PlaceHolders.os_hostname+` ${os.hostname()}\n`+config.PlaceHolders.cpu_core+` ${os.cpus().length}\n`+config.PlaceHolders.free_ram+` ${Math.floor(os.freemem().toFixed(2))} Mb\n`+config.PlaceHolders.available_ram+` ${Math.floor(os.totalmem().toFixed(2))} Mb\n`+config.PlaceHolders.uptime+` ${os.uptime()} seconds\n`+config.PlaceHolders.cpu_percentage+` ${cpuPercentage}%\n`+config.PlaceHolders.c_drive_usage+` ${disks[0].capacity}\n\n`+config.PlaceHolders.temporary_files_cleaned+"\n\n"+config.PlaceHolders.disk_cleanup,
                 "timestamp": null,
                 "author": {},
                 "image": {},
                 "thumbnail": {},
                 "footer": {
-                  "text": `Made by: Ruben Costa#4242 | ${date.toISOString()}`
+                  "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} ${config.PlaceHolders.footerText}`
                 },
                 "fields": []
               }
@@ -124,7 +123,7 @@ try {
         "image": {},
         "thumbnail": {},
         "footer": {
-          "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} `
+          "text": `Made by: Ruben Costa#4242 | ${date.toISOString()} ${config.PlaceHolders.footerText}`
         },
         "fields": []
       }
