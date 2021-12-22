@@ -4,9 +4,9 @@
     - [Project Explanation](#about-the-project)
     - [Project Status](#[project-status)
     - [Configurations](#configurations)
+    - [Technologies](#technologies)
     - [Help](#sos-help)
-    - [License](#license)
-    - [Technologies](#links)
+
 
 
 
@@ -19,7 +19,7 @@ This script was developed, so companies, don't have to worry about going to a co
 
 You can also retrieve information about the system, over discord:
 <br>
-<img src="./assets/discord_logging.gif">
+<img src="./assets/discord_logging.gif" alt="Logging system at discord" style="width: 600px">
 
 # Project Status
 ## 📃 To-do: 
@@ -32,23 +32,24 @@ You can also retrieve information about the system, over discord:
     [] Cleaning temporary files
 
 # Configurations
-    Creating a Discord Webhook:
-
-<!-- - Create a webhook
-- Go into config.ini file and assign the values, (inside the file there's an explanation about every setting)
-- Download all the packages using `npm install`, use `npm build` to make an executable with nexe. (Caution: Some antivirus will flag it as a virus. Why? You may ask. Response: It removes OS folders, specifically temporary folders: ["temp", "%temp%", "prefetch"], so don't worry!)
-- Optional:
-    - Go to task scheduler: 
-    - Click on: "Create Task"
-    - Name the task something knowledgeable: e.g. "Monitor computer task"
-    - Click on the "Triggers" tab
-    - Use the default: "On schedule"
-    - Change the start hour, so you are sure that at that time someone is using the computer, (if you want, use: "Repeat task every:", so the task will run itself). Click OK
-    - Then go to the "Actions" tab, click on "New", leave everything as default, just change on "Program/script" to the .exe file directory
-    - Then click "OK"
-    - Then click "OK" again and close task manager (The program should run on the defined schedule)## Pre-requisites:
-- Recommended having a discord server, to receive the data;   
-- Then you are going to receive the data to the discord! -->
+Creating a Discord Webhook:
+<br>
+<img src="./assets/createWebhook.gif" alt="Creating a Discord Webhook" style="width: 600px">
+<br>
+Changing Config.ini settings:
+<br>
+<img src="./assets/configVideo.gif" alt="Config.ini settings" style="width: 600px">
+<br>
+Running the program:
+<br>
+<img src="./assets/running_program.gif" alt="Running the program" style="width: 600px">
+<br>
+<br>
+<br>
+You are able to run the program on the startup
+<br>
+<img src="./assets/startup_programm.gif" alt="Adding the program to the startup" style="width: 600px">
+<br>
 
 
 # Technologies
