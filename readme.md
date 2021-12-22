@@ -1,17 +1,16 @@
 # Temporary file cleaner
 
 - [Temporary File Cleaner](#-Temporary-file-cleaner)
-    - [Project Explanation](#-Project-explanation)
-    - [Project Status](#-Project-Status)
-    - [Usage](#usage)
-    - [What's New?](#whats-new)
-    - [Question](#question)
+    - [Project Explanation](#about-the-project)
+    - [Project Status](#[project-status)
+    - [Configurations](#configurations)
+    - [Help](#sos-help)
     - [License](#license)
     - [Technologies](#links)
 
 
 
-# About the project
+## About the project
 This script was developed, so companies, don't have to worry about going to a computer and deleting temporary files (this can cause a loss of performance if not cleaned, this is more visible on low spec computers). And monitor the following information:
 
     - Cpu utilization
@@ -20,7 +19,7 @@ This script was developed, so companies, don't have to worry about going to a co
 
 You can also retrieve information about the system, over discord:
 <br>
-<img src="./assets/Animation.gif">
+<img src="./assets/discord_logging.gif">
 
 # Project Status
 ## 📃 To-do: 
